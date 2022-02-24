@@ -1,10 +1,10 @@
 class MessagesController < ApplicationController
   before_action :require_login, except: %i[index]
-  before_action :set_post, only: %i[show edit update destroy]
+  before_action :set_message, only: %i[show edit update destroy]
 
   # GET /messages or /messages.json
   def index
-    @messages = Post.all.includes(:author, :comments)
+    @messages = Message.all.includes(:author, :comments)
   end
 
   # GET /messages/1 or /messages/1.json
@@ -12,23 +12,23 @@ class MessagesController < ApplicationController
 
   # GET /messages/new
   def new
-    @post = Post.new
+    @message = Message.new
   end
 
   # GET /messages/1/edit
   def edit; end
 
-  # POST /messages or /messages.json
+  # message /messages or /messages.json
   def create
-    @post = current_user.messages.build(post_params)
+    @message = current_user.messages.build(message_param)
 
     respond_to do |format|
-      if @post.save
-        format.html { redirect_to post_url(@post), notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
+      if @message.save
+        format.html { redirect_to message_url(@message), notice: 'message was successfully created.' }
+        format.json { render :show, status: :created, location: @message }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -36,22 +36,22 @@ class MessagesController < ApplicationController
   # PATCH/PUT /messages/1 or /messages/1.json
   def update
     respond_to do |format|
-      if @post.update(post_params)
-        format.html { redirect_to post_url(@post), notice: 'Post was successfully updated.' }
-        format.json { render :show, status: :ok, location: @post }
+      if @message.update(message_param)
+        format.html { redirect_to message_url(@message), notice: 'message was successfully updated.' }
+        format.json { render :show, status: :ok, location: @message }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /messages/1 or /messages/1.json
   def destroy
-    @post.destroy
+    @message.destroy
 
     respond_to do |format|
-      format.html { redirect_to messages_url, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to messages_url, notice: 'Message was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -59,12 +59,12 @@ class MessagesController < ApplicationController
   private
 
   # Use callbacks to share common setup or constraints between actions.
-  def set_post
-    @post = Post.find(params[:id])
+  def set_message
+    @message = Message.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
-  def post_params
-    params.require(:post).permit(:name, :body)
+  def message_param
+    params.require(:message).permit(:content,)
   end
 end
