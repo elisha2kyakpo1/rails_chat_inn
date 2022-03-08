@@ -4,9 +4,7 @@ class RoomsController < ApplicationController
     @users = User.all_except(current_user)
   end
 
-  def create
-  end
+  def create; end
 
-  def show
-  end
+  def show; end
 end
