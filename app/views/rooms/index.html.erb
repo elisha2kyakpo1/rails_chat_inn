@@ -1,4 +1,5 @@
 <h1>Rooms</h1>
+<%= render partial: "new" %>
 <% @rooms.each do |room|%>
-  <p><%= room.name %></p>
+  <p><%= link_to room.name %></p>
 <%end%>
