@@ -63,6 +63,22 @@ small a {
   width: 80%;
 }
 
+.msg-form {
+  position: fixed;
+  bottom: 0;
+  width: 90%
+}
+
+.col-md-10 {
+  height: 100vh;
+  overflow: scroll;
+}
+
+.msg-content {
+  width: 80%;
+  margin-right: 5px;
+}
+
 body {
   margin: 0 20px;
 }
