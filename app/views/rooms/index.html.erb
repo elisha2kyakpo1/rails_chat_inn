@@ -20,6 +20,10 @@
   <div class="col-md-8 bg-dark text-right">
     <% if @single_room %>
       <h4 class="text-center"> <%= @single_room.name %> </h4>
-    <% end %>
+      <%= turbo_stream_from @single_room %>
+      <div id="messages">
+      </div>
+      <%= render partial: 'layouts/new_message_form' %>
+    <%end %>
   </div>
 </div>

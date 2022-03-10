@@ -2,35 +2,9 @@ class MessagesController < ApplicationController
   before_action :require_login, except: %i[index]
   before_action :set_message, only: %i[show edit update destroy]
 
-  # GET /messages or /messages.json
-  def index
-    @messages = Message.all.includes(:author, :comments)
-  end
-
-  # GET /messages/1 or /messages/1.json
-  def show; end
-
-  # GET /messages/new
-  def new
-    @message = Message.new
-  end
-
-  # GET /messages/1/edit
-  def edit; end
-
-  # message /messages or /messages.json
+  
   def create
-    @message = current_user.messages.build(message_param)
-
-    respond_to do |format|
-      if @message.save
-        format.html { redirect_to message_url(@message), notice: 'message was successfully created.' }
-        format.json { render :show, status: :created, location: @message }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
-      end
-    end
+    @message = current_user.messages.create(content: msg_params[:content], room_id: params[:room_id])
   end
 
   # PATCH/PUT /messages/1 or /messages/1.json
