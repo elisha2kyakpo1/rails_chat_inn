@@ -6,7 +6,17 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = Room.create(name: params["room"]["name"])
+    @room = current_user.messages.build(room_param)
+
+    respond_to do |format|
+      if @room.save
+        format.html { redirect_to message_url(@room), notice: 'room was successfully created.' }
+        format.json { render :show, status: :created, location: @room }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @room.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def show
@@ -14,6 +24,12 @@ class RoomsController < ApplicationController
     @rooms = Room.public_rooms
     @users = User.all_except(@current_user)
     @room = Room.new
-    render "index"  
+    render 'index'
+  end
+
+  private
+
+  def room_param
+    params.require(:room).permit(:name, :is_private)
   end
 end
