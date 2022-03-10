@@ -1,5 +1,25 @@
-<h1>Rooms</h1>
-<%= render partial: "new" %>
-<% @rooms.each do |room|%>
-  <p><%= link_to room.name %></p>
-<%end%>
+<div class="row">
+  <div class="col-md-4">
+    <h5> Hi <%= current_user.name %> </h5>
+    <h4> Users </h4>
+    <div>
+      <%= turbo_stream_from "users" %>
+      <div id="users">
+        <%= render @users %>
+      </div>
+    </div>
+    <h4> Rooms </h4>
+    <%= render partial: "layouts/new_room" %>
+    <div>
+      <%= turbo_stream_from "rooms" %>
+      <div id="rooms">
+        <%= render @rooms %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8 bg-dark">
+    <% if @single_room %>
+      <h4 class="text-center"> <%= @single_room.name %> </h4>
+    <% end %>
+  </div>
+</div>
