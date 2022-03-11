@@ -2,7 +2,6 @@ class MessagesController < ApplicationController
   before_action :require_login, except: %i[index]
   before_action :set_message, only: %i[show edit update destroy]
 
-  
   def create
     @message = current_user.messages.create(content: msg_params[:content], room_id: params[:room_id])
   end
