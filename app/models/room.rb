@@ -1,5 +1,5 @@
 class Room < ApplicationRecord
-  has_many :users, dependent: :destroy
+  has_many :participants, dependent: :destroy
   has_many :messages, dependent: :destroy
   validates :name, presence: true
   has_rich_text :contents
