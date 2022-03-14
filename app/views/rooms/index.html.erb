@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-4">
-    <h5> Hi <%#= current_user.name %> </h5>
+    <h5> Hi <%= current_user.name %> </h5>
     <h4> Users </h4>
     <div>
       <%= turbo_stream_from "users" %>
@@ -23,7 +23,7 @@
       <%= turbo_stream_from @single_room %>
       <div id="messages">
       </div>
-      <%= render partial: 'layouts/new_message_form' %>
+      <%= render partial: 'layouts/new_message' %>
     <%end %>
   </div>
 </div>
