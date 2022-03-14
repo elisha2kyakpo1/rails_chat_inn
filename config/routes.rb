@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root 'room#index'
+  root 'rooms#index'
   delete '/logout', to: 'sessions#logout_user'
   resources :sessions, only: %i[new create]
   resources :rooms do
