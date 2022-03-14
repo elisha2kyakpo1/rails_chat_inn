@@ -1,9 +1,9 @@
 class RoomsController < ApplicationController
-  before_action :require_login
+  before_action :require_login, except: %i[index]
 
   def index
     @rooms = Room.all
-    @users = User.all_except(@current_user)
+    @users = User.all_except(current_user)
     @room = Room.new
   end
 
@@ -27,7 +27,7 @@ class RoomsController < ApplicationController
     @rooms = Room.public_rooms
     @users = User.all_except(@current_user)
     @room = Room.new
-
+  
     render 'index'
   end
 

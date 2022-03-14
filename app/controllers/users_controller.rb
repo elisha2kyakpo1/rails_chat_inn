@@ -39,7 +39,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:author_id] = @user.id
-      redirect_to messages_path,
+      redirect_to rooms_path,
                   notice: "Hi #{@user.name}, you successfully Signed up!"
     else
       render 'new', notice: 'This name is taken!'
