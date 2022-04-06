@@ -24,6 +24,7 @@
       <h4 class="text-center"> <%= @single_room.name %> </h4>
       <%= turbo_stream_from @single_room %>
       <div id="messages">
+        <%= render @messages %>
       </div>
       <%= render partial: 'layouts/new_message' %>
     <%end %>

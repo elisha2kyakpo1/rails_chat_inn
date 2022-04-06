@@ -15,6 +15,7 @@ class RoomsController < ApplicationController
     @current_user = current_user
     @single_room = Room.find(params[:id])
     @rooms = Room.public_rooms
+    @messages = @single_room.messages
     @users = User.all_except(@current_user)
     @room = Room.new
   
