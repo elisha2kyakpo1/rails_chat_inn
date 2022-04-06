@@ -5,7 +5,7 @@ class Message < ApplicationRecord
   belongs_to :parent, class_name: 'Message', optional: true
   validates :content, presence: true
   before_create :confirm_participant
-  after_create_commit { broadcast_append_to self.room }
+  after_create_commit { broadcast_append_to room }
 
   def confirm_participant
     if room.is_private

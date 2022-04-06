@@ -8,7 +8,7 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = Room.create(name: params["room"]["name"])
+    @room = Room.create(name: params['room']['name'])
   end
 
   def show
@@ -18,7 +18,7 @@ class RoomsController < ApplicationController
     @messages = @single_room.messages
     @users = User.all_except(@current_user)
     @room = Room.new
-  
+
     render 'index'
   end
 end
