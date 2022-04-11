@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root 'rooms#index'
-  delete '/logout', to: 'sessions#logout_user'
-  resources :sessions, only: %i[new create]
+  get '/logout', to: 'sessions#logout_user'
+  resources :sessions
   resources :rooms do
     resources :messages
   end
