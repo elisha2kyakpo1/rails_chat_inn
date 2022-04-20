@@ -74,18 +74,22 @@ small a {
   overflow: scroll;
 }
 
+.friend-btn {
+  border: 1px solid skyblue;
+  padding: 3px;
+}
+
 .msg-content {
   width: 80%;
   margin-right: 5px;
 }
 
 .message-box {
-  width: fit-content;
   max-width: 40%;
   padding: 5px;
   border-radius: 10px;
   margin-bottom: 10px;
-  background-color: #555555 ;
+  background-color: #555 ;
   padding: 10px
 }
 
