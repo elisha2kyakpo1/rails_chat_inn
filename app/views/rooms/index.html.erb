@@ -1,32 +1,28 @@
-<div class="row">
-  <div class="col-md-4 mt-2">
-    <% if current_user%>
-      <h5> Hi <%= current_user.name %> </h5>
-    <%end%>
-    <h4>People you may know</h4>
-    <div>
-      <%= turbo_stream_from "users" %>
-      <div id="users">
-        <%= render @users %>
-      </div>
+<div id="chatroom_container" class="row bg-dark text-light p-3">
+    <div id="side_panel" class="col-md-4 col-sm-12">
+    <h5><%= current_user.email %></h5>
+    <h4>Users</h4>
+        <%= turbo_stream_from "users" %>
+        <div id="users">
+            <%=render @users %>
+        </div>
+    <h4>Rooms </h4>
+        <%= turbo_stream_from "rooms" %>
+        <div id="rooms">
+            <%= render @rooms%>
+        </div>
+        <%= render 'layouts/new_room' %>
     </div>
-    <h4> Rooms </h4>
-    <%= render partial: "layouts/new_room" %>
-    <div>
-      <%= turbo_stream_from "rooms" %>
-      <div id="rooms">
-        <%= render @rooms %>
-      </div>
+    <div id="room_container" class="col-md-8 col-sm-12 bg-dark text-light">
+    <%if @single_room %>
+        <div id="single_room">
+            <h4 class="text-center"><%= @user&.email || @single_room.name %></h4><%= turbo_stream_from @single_room%>
+            <div id="messages"><%= render @messages %></div>
+            <div id="send-message">
+                <%= render 'layouts/new_message' %>
+            </div>
+             <% end %>
+         </div>
     </div>
-  </div>
-  <div class="col-md-8 bg-dark text-right">
-    <% if @single_room %>
-      <h4 class="text-center"> <%= @single_room.name %> </h4>
-      <%= turbo_stream_from @single_room %>
-      <div id="messages">
-        <%= render @messages %>
-      </div>
-      <%= render partial: 'layouts/new_message' %>
-    <%end %>
-  </div>
+
 </div>
