@@ -1,8 +1,7 @@
 class Message < ApplicationRecord
   belongs_to :user
   belongs_to :room
-  has_rich_text :content
-  after_create_commit {broadcast_append_to self.room}
+  after_create_commit { broadcast_append_to self.room }
   before_create :confirm_participant
 
   def confirm_participant

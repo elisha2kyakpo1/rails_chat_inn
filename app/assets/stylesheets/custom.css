@@ -63,36 +63,6 @@ small a {
   width: 80%;
 }
 
-.msg-form {
-  position: fixed;
-  bottom: 0;
-  width: 90%
-}
-
-.col-md-10 {
-  height: 100vh;
-  overflow: scroll;
-}
-
-.friend-btn {
-  border: 1px solid skyblue;
-  padding: 3px;
-}
-
-.msg-content {
-  width: 80%;
-  margin-right: 5px;
-}
-
-.message-box {
-  max-width: 40%;
-  padding: 5px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  background-color: #555 ;
-  padding: 10px
-}
-
 body {
   margin: 0 20px;
 }

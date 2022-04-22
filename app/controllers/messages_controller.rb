@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
   before_action :set_message, only: %i[show edit update destroy]
 
   def create
-    @message = current_user.messages.create(content: msg_params[:content], room_id: params[:room_id])
+    @message = current_user.messages.create(content: message_param[:content], room_id: params[:room_id])
   end
 
   # PATCH/PUT /messages/1 or /messages/1.json
