@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <nav>
+        <div class="mt-3">
+          <% if current_user %>
+            <%= link_to 'Log out', logout_path(@user), data: {
+                        turbo: false }, method: :delete, class: 'sign' %>
+            <%else%>
+            <%= link_to 'Sign in', new_session_path(), class: 'sign' %>
+            <%= link_to 'Sign Up', new_user_path(), class: 'sign' %>
+          <%end%>
+        </div>
+        <% if notice.present? %>
+          <div class="notice">
+            <p class="bg-warning text-center text-white"> <%= notice %> </p>
+          </div>
+        <% end %>
+        <% if alert.present? %>
+          <div class="alert">
+            <p class="bg-danger text-center text-white"> <%= alert %> </p>
+          </div>
+        <% end %>
+      </nav>
+    </div>
+  </div>
+</nav>
