@@ -28,7 +28,7 @@ small a {
 }
 
 body {
-  margin: 0 20px;
+  margin: 0;
 }
 
 a {
@@ -63,8 +63,31 @@ small a {
   width: 80%;
 }
 
-body {
-  margin: 0 20px;
+.current-user {
+  background-color: #007bff;
+  padding: 5px;
+  border-radius: 18px;
+}
+
+.current-user-cont {
+  display: flex;
+  justify-content: flex-end
+}
+
+.another-user-cont {
+  display: flex;
+  justify-content: flex-start
+}
+
+.form-control,
+.btn-primary {
+  border-radius: 0;
+}
+
+.another-user {
+  background-color: #6b7280;
+  padding: 5px;
+  border-radius: 18px;
 }
 
 a {

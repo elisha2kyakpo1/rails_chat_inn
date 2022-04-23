@@ -1,4 +1,4 @@
-<div class="">
+<div class="mt-5">
     <%= form_with(model: [@single_room, @message], remote: true, class:'d-flex', id:'form-message') do |f|%>
         <%= f.text_field :content, id: 'chat-text', class: 'form-control msg-content', autocomplete: 'off' %>
         <%= f.submit data: {disable_with: false}, id: 'btn', class:'btn btn-primary'%>
