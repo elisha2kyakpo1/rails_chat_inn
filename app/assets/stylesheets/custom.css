@@ -4,12 +4,6 @@
   padding: 10px;
 }
 
-.sign {
-  border: 1px solid #1da1f2;
-  padding: 10px;
-  border-radius: 8px;
-}
-
 small a {
   font-size: 1em;
   padding-right: 0.2rem;
@@ -58,12 +52,6 @@ a {
   padding: 10px;
 }
 
-.sign {
-  border: 1px solid #1da1f2;
-  padding: 10px;
-  border-radius: 8px;
-}
-
 small a {
   font-size: 1em;
   padding-right: 0.2rem;
@@ -89,12 +77,14 @@ small a {
 
 .current-user-cont {
   display: flex;
-  justify-content: flex-end
+  justify-content: flex-end;
+  margin: 5px 0;
 }
 
 .another-user-cont {
   display: flex;
-  justify-content: flex-start
+  justify-content: flex-start;
+  margin: 5px 0;
 }
 
 .form-control,

@@ -4,12 +4,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root 'rooms#index'
-  get '/logout', to: 'sessions#logout_user'
-  resources :sessions
+
   resources :rooms do
     resources :messages
   end
-
-  # resources :comments, only: %i[index create show]
-  resources :users, only: %i[index show new create]
+  devise_for :users
 end
