@@ -23,6 +23,7 @@ small a {
 
 .message-body {
   background-color: #fff;
+  padding-right: 10px;
   height: 100%;
 }
 
@@ -65,6 +66,16 @@ small a {
   background-color: #007bff;
   padding: 5px;
   border-radius: 18px;
+}
+
+.message-box {
+  word-wrap: break-word;
+  max-width: 40%;
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #555;
+  padding: 10px;
 }
 
 .current-user-cont {
