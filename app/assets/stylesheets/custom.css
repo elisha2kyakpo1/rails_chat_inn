@@ -68,6 +68,14 @@ small a {
   border-radius: 18px;
 }
 
+.sign-form {
+  justify-content: center;
+}
+
+.sign-form div {
+  /* width: 50%; */
+}
+
 .message-box {
   word-wrap: break-word;
   max-width: 40%;
