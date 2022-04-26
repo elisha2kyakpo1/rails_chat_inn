@@ -1,7 +1,11 @@
 <div class="mt-5 message-input">
-    <%= form_with(model: [@single_room, @message], remote: true, class:'d-flex',
+  <%= form_with(model: [@single_room, @message], remote: true, class:'d-flex', id:'form-message',
     data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }) do |f| %>
-        <%= f.text_field :content, id: 'chat-text', placeholder: 'type message!', class: 'form-control msg-content', autocomplete: 'off' %>
-        <%= f.submit data: {disable_with: false}, id: 'btn', class:'btn btn-primary'%>
+      <%= f.text_field :content, id: 'chat-text', placeholder: 'type message!', class: 'form-control msg-content', autocomplete: 'off' %>
+      <%= f.submit data: {disable_with: false}, id: 'btn', class:'btn btn-primary'%>
+      <script>
+        let form = document.getElementById("form-message");
+          form.target.reset();
+      </script>
+  <%end%>
 </div>
-<% end %>

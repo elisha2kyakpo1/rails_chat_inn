@@ -1,5 +1,5 @@
 <div class="d-flex sign-form">
-  <div class="w-50">
+  <div class="w-50 inner-sign mt-5">
 
     <h2 class="flex bg-[#3778c2] w-full py-3">REGISTER</h2>
 
@@ -11,12 +11,12 @@
         <div class="mt-12 text-[#434b54]">
           <div class="field">
             <%= f.label :name %><br />
-            <%= f.text_field :name, class: "form-control" %>
+            <%= f.text_field :name, class: "form-control rounded-1" %>
           </div>
 
           <div class="field">
             <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control rounded-1" %>
           </div>
 
           <div class="field">
@@ -24,12 +24,12 @@
             <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
             <% end %><br />
-            <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+            <%= f.password_field :password, autocomplete: "new-password", class: "form-control rounded-1" %>
           </div>
 
           <div class="field">
             <%= f.label :password_confirmation %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control rounded-1" %>
           </div>
 
           <div class="actions">

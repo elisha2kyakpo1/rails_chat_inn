@@ -17,10 +17,10 @@
     <%if @single_room %>
       <div class="message-body pr-5" id="single_room">
           <h4 class="text-center text-black">
-            <%= @user&.name || @single_room.name %>
+            <strong><%= @user&.name || @single_room.name %></strong>
           </h4>
           <%= turbo_stream_from @single_room%>
-          <div id="messages">
+          <div class="messages" id="messages">
             <%= render @messages %>
           </div>
         <div class="send-sms" id="send-message">

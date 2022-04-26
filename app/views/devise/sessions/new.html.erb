@@ -1,16 +1,16 @@
 <div class="d-flex sign-form">
-  <div>
+  <div class="w-50 inner-sign mt-3">
     <h2>Log in</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "form-control" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "form-control rounded-1" %>
       </div>
 
       <div class="field">
         <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "current-password" , class: "form-control" %>
+        <%= f.password_field :password, autocomplete: "current-password" , class: "form-control rounded-1" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
@@ -25,6 +25,6 @@
       </div>
     <% end %>
 
-    <p><%= render "devise/shared/links" %>
+    <p>Don't have an account?<%= render "devise/shared/links" %></p>
   </div>
 </div>
