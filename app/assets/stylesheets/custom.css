@@ -82,6 +82,8 @@ small a {
 
 .messages {
   margin-left: 5px;
+  overflow-y: scroll;
+  height: 65vh;
 }
 
 .message-box {
