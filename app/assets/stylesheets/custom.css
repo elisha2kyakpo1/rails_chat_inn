@@ -27,6 +27,10 @@ small a {
   height: 100%;
 }
 
+small {
+  color: #64748b;
+}
+
 .cont-room {
   position: relative;
   padding: 0;

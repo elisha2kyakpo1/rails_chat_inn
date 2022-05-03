@@ -4,6 +4,6 @@
       <h6 class="name"> <%= message.user.name %> </h6>
     <% end %>
   <%= message.content %><br>
-  <small><%= time_ago_in_words(message.created_at) %> ago </small>
+  <p class="time"><%= time_ago_in_words(message.created_at) %> ago </p>
   </div>
 </div>
