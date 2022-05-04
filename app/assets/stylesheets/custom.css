@@ -28,7 +28,7 @@ small a {
 }
 
 small {
-  color: #64748b;
+  color: #111827;
 }
 
 .cont-room {
@@ -127,4 +127,8 @@ small a {
 a {
   text-decoration: none;
   font-size: 1.1rem;
+}
+
+.name {
+  background-color: #555;
 }
