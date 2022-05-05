@@ -13,15 +13,21 @@
 
     <style>
       <%= ".msg-#{current_user&.id}" %> {
-        background-color: #007bff !important;
+        background-color: #60a5fa !important;
         padding: 10px;
         border-radius: 18px;
+      }
+
+      <%= ".msg-#{current_user&.id}" %> h6 {
+        background-color: #bfdbfe;
+        padding: 5px;
+        border-radius: 3px;
       }
 
       <%= ".cont-#{current_user&.id}" %> {
         display: flex;
         justify-content: flex-end;
-        margin: 5px 0;
+        margin: 5px;
       }
     </style>
   </head>

@@ -97,8 +97,14 @@ small a {
   padding: 5px;
   border-radius: 10px;
   margin-bottom: 10px;
-  background-color: #555;
+  background-color: #d1d5db;
   padding: 10px;
+}
+
+.message-box h6 {
+  background-color: #e5e7eb;
+  padding: 5px;
+  border-radius: 3px;
 }
 
 .current-user-cont {

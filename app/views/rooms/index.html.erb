@@ -3,19 +3,19 @@
     <h5><%= current_user.name %></h5>
     <h4>Users</h4>
       <%= turbo_stream_from "users" %>
-      <div id="users">
+      <div class="rounded-3" id="users">
           <%=render @users %>
       </div>
     <h4>Rooms </h4>
       <%= turbo_stream_from "rooms" %>
-      <div id="rooms">
+      <div class="rounded-3" id="rooms">
           <%= render @rooms%>
       </div>
     <%= render 'layouts/new_room' %>
   </div>
   <div id="room_container" class="cont-room col-md-8 col-sm-12 bg-dark text-light">
     <%if @single_room %>
-      <div class="message-body pr-5" id="single_room">
+      <div class="message-body pr-5 rounded-2" id="single_room">
           <h4 class="text-center text-black">
             <strong><%= @user&.name || @single_room.name %></strong>
           </h4>
