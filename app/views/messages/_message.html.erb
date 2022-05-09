@@ -5,7 +5,7 @@
         <h6 class="name"> <%= link_to message.user.name %> </h6>
       </div>
     <% end %>
-    <p><%= message.content %></p><br>
+    <%= message.content %><br>
     <small><%= time_ago_in_words(message.created_at) %> ago </small>
   </div>
 </div>
