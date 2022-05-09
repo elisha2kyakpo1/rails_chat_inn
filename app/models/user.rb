@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   validates_uniqueness_of :name
   scope :all_except, ->(user) { where.not(id: user) }
+  scope :filter_by_user_name, ->(name) { where('name ILIKE ?', "%#{name}%") }
 
   enum status: %i[online away offline]
 

@@ -7,6 +7,19 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def search
+    if params[name_search].present?
+      @users = User.filter_by_user_name(params[:name_search])
+    else
+      @users = []
+    end
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.update
+      end
+    end
+  end
+
   def show
     @user = User.find(params[:id])
     @users = User.all_except(current_user)
