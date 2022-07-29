@@ -39,6 +39,7 @@ small {
 body {
   margin: 0;
   overflow-x: hidden;
+  background-color: #f4f3f6;
 }
 
 a {
@@ -100,6 +101,15 @@ small a {
   background-color: #d1d5db;
   padding: 10px;
   color: #111827;
+}
+
+.sidebar {
+  width: 264px;
+  text-align: left;
+  z-index: 1005;
+  height: 100vh;
+  padding: 32px 0 0;
+  background-color: #fff !important;
 }
 
 .message-box h6 {
