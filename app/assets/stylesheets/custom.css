@@ -42,6 +42,10 @@ body {
   background-color: #f4f3f6;
 }
 
+.panel {
+  justify-content: center;
+}
+
 a {
   text-decoration: none;
   font-size: 1.1rem;

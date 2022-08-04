@@ -70,7 +70,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
 gem 'devise', '~> 4.8'
-
+gem 'font-awesome-rails'
 gem 'noticed', '~> 1.5'

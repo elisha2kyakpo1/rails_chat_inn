@@ -102,6 +102,8 @@ GEM
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
+    font-awesome-rails (4.7.0.8)
+      railties (>= 3.2, < 8.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     http (5.0.4)
@@ -259,6 +261,7 @@ DEPENDENCIES
   capybara
   debug
   devise (~> 4.8)
+  font-awesome-rails
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
