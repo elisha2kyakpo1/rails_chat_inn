@@ -1,12 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarNav">
       <nav>
         <div class="mt-3">
           <div>
-            <% if current_user %>
-              <%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn-primary rounded-1" %>
-            <% else %>
+            <% if !current_user %>
               <%= link_to 'Sign in', user_session_path %>
             <% end %>
           </div>

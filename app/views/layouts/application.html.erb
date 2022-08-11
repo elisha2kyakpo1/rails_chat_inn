@@ -35,6 +35,9 @@
   <body>
     <main>
       <%=render "layouts/navbar" %>
+      <% if current_user %>
+        <%= render "layouts/side_bar"%>
+      <% end %>
       <%= yield %>
     </main>
   </body>

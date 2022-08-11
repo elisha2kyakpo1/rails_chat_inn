@@ -42,6 +42,11 @@ body {
   background-color: #f4f3f6;
 }
 
+.row {
+  width: 77%;
+  float: right;
+}
+
 .panel {
   justify-content: center;
 }
@@ -108,10 +113,12 @@ small a {
 }
 
 .sidebar {
-  width: 264px;
+  width: 23%;
   text-align: left;
   z-index: 1005;
-  height: 100vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
   padding: 32px 0 0;
   background-color: #fff !important;
 }
