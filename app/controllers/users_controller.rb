@@ -8,11 +8,11 @@ class UsersController < ApplicationController
   end
 
   def search
-    if params[name_search].present?
-      @users = User.filter_by_user_name(params[:name_search])
-    else
-      @users = []
-    end
+    @users = if params[name_search].present?
+               User.filter_by_user_name(params[:name_search])
+             else
+               []
+             end
     respond_to do |format|
       format.turbo_stream do
         render turbo_stream: turbo_stream.update
