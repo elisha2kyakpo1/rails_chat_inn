@@ -164,9 +164,8 @@ small a {
   border-radius: 18px;
 }
 
-.owner {
-  justify-content: flex-end;
-  margin-right: 5%;
+.collabo {
+  flex-direction: row-reverse;
 }
 
 .name,

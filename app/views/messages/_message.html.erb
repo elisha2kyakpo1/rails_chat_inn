@@ -1,19 +1,12 @@
-  <% unless message.room.is_private %>
-    <div class="d-flex">
-      <% if current_user.id == message.user.id %>
-        <div class="owner d-flex">
-          <h6 class="name"> <%= link_to message.user.name %> </h6>
-          <h6 class="name">. <%= time_ago_in_words(message.created_at) %> ago</h6>
-        </div>
-      <% else %>
-        <h6 class="name"> <%= link_to message.user.name %> </h6>
-        <h6 class="name">. <%= time_ago_in_words(message.created_at) %> ago</h6>
-        <%end%>
-    </div>
-  <% end %>
 
 <div class="cont-<%= message.user.id %>">
-
+  
+    <% unless message.room.is_private %>
+      <div class="d-flex">
+        <h6 class="name"> <%= link_to message.user.name %> </h6>
+        <h6 class="name">. <%= time_ago_in_words(message.created_at) %> ago</h6>
+      </div>
+    <% end %>                           
     <div class="message-box msg-<%= message.user.id %> " >
       <%= message.content %><br>
     </div>
