@@ -10,6 +10,7 @@
       <%= render 'users/status', user: user %>
     </div>
   </div>
+  <img src="<%= user.avatar %>" alt="">
   <%= link_to user.name, user, class:'ms-2 me-auto username text-black' %>
   <div data-controller="rooms" data-action="click->rooms#call_user" class="btn rounded-1 btn-primary">Call</div>
 </li>
