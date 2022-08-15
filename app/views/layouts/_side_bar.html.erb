@@ -3,6 +3,12 @@
     <div class="" id="sidebar">
       <section>
         <div class="mt-3">
+              <div class="profile-cont d-flex">
+                <div class="profile">
+                  <%= image_tag(current_user.pic) if current_user.pic.attached? %>
+                </div>
+                <h5 class="text-dark"><%= current_user.name %></h5>
+              </div>
           <div class="">
             <span><i class="bi bi-arrow-right-circle"></i></span>
             <h4><%= link_to "Dashboard", root_path, turbo:'false' %></h4>

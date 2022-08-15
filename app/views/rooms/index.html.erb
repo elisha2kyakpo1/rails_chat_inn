@@ -17,8 +17,7 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
   <div id="side_panel" class="col-md-4 col-sm-12 mr-2">
-    <h5><%= current_user.name %></h5>
-    <h4>Users</h4>
+    <h4 class="text-dark">Friends</h4>
       <%= turbo_stream_from "users" %>
       <div class="rounded-3" id="users">
           <%=render @users %>
