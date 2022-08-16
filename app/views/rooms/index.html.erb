@@ -1,26 +1,31 @@
-<div id="chatroom_container" class="row text-light p-3">
-  <div id="side_panel" class="col-md-6 col-sm-12 mr-2">
-    <div class="friends bg-white p-5">
-      <h4 class="text-dark">Friends</h4>
-      <%= turbo_stream_from "users" %>
-      <div class="rounded-3" id="users">
-          <%=render @users %>
+<div class="section">
+  <div id="chatroom_container" class="row text-light p-3">
+    <div id="side_panel" class="col-md-6 col-sm-12 mr-2">
+      <div class="friends bg-white">
+        <h4 class="titles text-dark">Friends</h4>
+        <%= turbo_stream_from "users" %>
+        <div class="rounded-3" id="users">
+            <%=render @users %>
+        </div>
       </div>
     </div>
-    <div class="rooms-cont bg-white p-5">
-      <h4 class="text-dark">Rooms </h4>
-        <%= turbo_stream_from "rooms" %>
-        <div class="rounded-t-3" id="rooms">
-          <%= render @rooms%>
-        </div>
-      <%= render 'layouts/new_room' %>
+    <div id="chat-panel" class="col-md-6 col-sm-12">
+      <div class="rooms-cont bg-white">
+        <h4 class="titles text-dark">Rooms </h4>
+          <%= turbo_stream_from "rooms" %>
+          <div class="rounded-t-3" id="rooms">
+            <%= render @rooms%>
+          </div><br/>
+        <%= render 'layouts/new_room' %>
+      </div>
     </div>
   </div>
-  <div id="room_container" class="cont-room col-md-6 col-sm-12 text-light">
+  <div id="room_container" class="cont-room text-light">
     <%if @single_room %>
-      <div class="message-body pr-5 rounded-2" id="single_room">
-          <h4 class="text-center text-black">
-            <strong><%= @user&.name.titleize || @single_room.name.titleize %></strong>
+      <div class="message-body" id="single_room">
+          <h4 class="d-flex sms-chat text-white bg-primary">
+            <strong><%= @user&.name || @single_room.name %></strong>
+             <span class="close">&times;</span>
           </h4>
           <%= turbo_stream_from @single_room%>
           <div class="messages" id="messages">

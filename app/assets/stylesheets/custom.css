@@ -23,8 +23,8 @@ small a {
 
 .message-body {
   background-color: #fff;
-  padding-right: 10px;
   height: 100%;
+  border-radius: 0.5rem;
 }
 
 small {
@@ -32,12 +32,31 @@ small {
 }
 
 .cont-room {
-  position: relative;
+  position: absolute;
+  right: 25px;
+  z-index: 5;
+  top: 0;
   padding: 0;
 }
 
+.titles {
+  letter-spacing: 0;
+  line-height: 32px;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.room-names {
+  font-size: 1.5rem;
+}
+
 .rooms-cont,
-.friends,
+.friends {
+  border-radius: 0.5rem;
+  padding: 1rem 3rem;
+}
+
+
 .cont-room {
   box-shadow: rgb(0 0 0 / 20%) 0px 0px 0.428571rem 0px;
   border-radius: 0.571429rem;
@@ -54,10 +73,25 @@ body {
   background-color: #f4f3f6;
 }
 
+.close {
+  cursor: pointer;
+}
+
+.sms-chat {
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.section {
+  margin-left: 16%;
+  margin-top: 5%;
+  position: relative;
+}
+
 .row {
-  /* column-gap: 10px; */
-  width: 85%;
-  float: right;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 100%;
 }
 
 .panel {
@@ -114,6 +148,7 @@ small a {
   margin-left: 5px;
   overflow-y: scroll;
   height: 65vh;
+  padding: 0 0.5rem;
 }
 
 .message-box {
