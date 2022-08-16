@@ -36,6 +36,18 @@ small {
   padding: 0;
 }
 
+.rooms-cont,
+.friends,
+.cont-room {
+  box-shadow: rgb(0 0 0 / 20%) 0px 0px 0.428571rem 0px;
+  border-radius: 0.571429rem;
+}
+
+.friends:hover,
+.message-body:hover {
+  box-shadow: rgb(0 0 0 / 20%) 0px 0px 0.428571rem 0px;
+}
+
 body {
   margin: 0;
   overflow-x: hidden;
@@ -43,11 +55,9 @@ body {
 }
 
 .row {
-  width: 77%;
+  /* column-gap: 10px; */
+  width: 85%;
   float: right;
-  box-shadow: rgb(0 0 0 / 20%) 0px 0px 0.428571rem 0px;
-  border-radius: 0.571429rem;
-  background-color: #fff;
 }
 
 .panel {
@@ -57,7 +67,9 @@ body {
 a {
   text-decoration: none;
   font-size: 1.1rem;
-}.top-nav {
+}
+
+.top-nav {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
@@ -116,7 +128,7 @@ small a {
 }
 
 .sidebar {
-  width: 23%;
+  width: 15%;
   text-align: left;
   z-index: 1005;
   position: absolute;
