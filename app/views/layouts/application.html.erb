@@ -43,7 +43,11 @@
       <%=render "layouts/navbar" %>
       <% if current_user %>
         <%= render "layouts/side_bar"%>
-        <i class="fa-solid fa-message"></i>
+        <div class="chat">
+          <div class="messager">
+            <%= link_to '<i class="fa-solid fa-message"></i>'.html_safe, rooms_path %>
+          </div>
+        </div>
       <% end %>
       <%= yield %>
     </main>

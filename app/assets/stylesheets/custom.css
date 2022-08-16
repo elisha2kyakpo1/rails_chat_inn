@@ -39,6 +39,41 @@ small {
   padding: 0;
 }
 
+.chat {
+  position: absolute;
+  right: 5%;
+  bottom: 20%;
+  z-index: 5;
+}
+
+.chat .messager {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #2C71F0;
+  font-size: 60px;
+  padding: 5px;
+  box-shadow: rgb(0 0 0 / 20%) 0px 0px 0.428571rem 0px;
+}
+
+.home {
+  margin-left: 5px;
+}
+
+.home-btn {
+  cursor: pointer;
+}
+
+.chat a {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 50px;
+}
+
 .titles {
   letter-spacing: 0;
   line-height: 32px;
