@@ -1,6 +1,6 @@
 <div class="section">
   <div id="chatroom_container" class="row text-light p-3">
-    <div id="side_panel" class="col-md-6 col-sm-12 mr-2">
+    <div id="side_panel" class="col-md-8 col-sm-12 mr-2">
       <div class="friends bg-white">
         <h4 class="titles text-dark">Friends</h4>
         <%= turbo_stream_from "users" %>
@@ -9,7 +9,7 @@
         </div>
       </div>
     </div>
-    <div id="chat-panel" class="col-md-6 col-sm-12">
+    <div id="chat-panel" class="col-md-4 col-sm-12">
       <div class="rooms-cont bg-white">
         <h4 class="titles text-dark">Rooms </h4>
           <%= turbo_stream_from "rooms" %>

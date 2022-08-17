@@ -4,37 +4,29 @@
   <% isActive = '' %>
 <% end %>
 <li class="list-group-item d-flex align-items-center justify-content-between user_list_item <%= isActive %>">
-  <div class="profile">
-    <%= image_tag(user.pic) if user.pic.attached? %>
-  </div>
-    <div class="status">
-      <%= turbo_stream_from "user_status" %>
-      <%= render 'users/status', user: user %>
-      
-    </div>
-  <%= link_to user.name, user, class:'ms-2 me-auto username text-black' %>
-  <div data-controller="rooms" data-action="click->rooms#call_user" class="btn rounded-1 btn-primary">Call</div>
-</li>
-
-<li>
   <% unless user == current_user %>
-  <h4>
-      <%= user.name %>
-    <span class="profile-link"> 
-      <%= link_to 'See Profile',  user_path(user), class: 'profile' %> 
-    </span> 
+    <div class="profile">
+      <%= image_tag(user.pic) if user.pic.attached? %>
+    </div>
+      <div class="status">
+        <%= turbo_stream_from "user_status" %>
+        <%= render 'users/status', user: user %>
+        
+      </div>
+    <%= link_to user.name, user, class:'ms-2 me-auto username text-black' %>
     <span class="profile-link">
-    <% if current_user.friend?(user) %>
-      You are friends  <%= link_to 'Delete', delete_friends_user_path(user), class: 'delete' %>
-    <% elsif current_user.friend_requests.include?(user) %>
-      Incoming Request <%= link_to 'Accept', confirm_friends_user_path(user), class: 'request' %>  <%= link_to 'Ignore', delete_friends_user_path(user), class: 'request'%>
-    <% elsif current_user.pending_friends.include?(user) %>
-      Pending request 
-      <%= link_to 'Cancel', delete_friends_user_path(user), class: 'delete' %>   
-    <% else %>
-      <%= link_to 'Add friend', create_friendship_user_path(user), class: 'request' %>
-    <% end %>
-    </span>  
-    <% end %>
-  </h4>
+      <% if current_user.friend?(user) %>
+        You are friends  <%= link_to 'Delete', delete_friends_user_path(user), class: 'delete btn rounded-1 bg-danger' %>
+      <% elsif current_user.friend_requests.include?(user) %>
+        Incoming Request <%= link_to 'Accept', confirm_friends_user_path(user), class: 'btn rounded-1 request' %>  <%= link_to 'Ignore', delete_friends_user_path(user), class: 'request'%>
+      <% elsif current_user.pending_friends.include?(user) %>
+        Pending request 
+        <%= link_to 'Cancel', delete_friends_user_path(user), class: 'delete btn rounded-1 bg-danger' %>   
+      <% else %>
+        <%= link_to 'Add friend', create_friendship_user_path(user), class: 'btn rounded-1 request' %>
+      <% end %>
+    </span>
+
+    <div data-controller="rooms" data-action="click->rooms#call_user" class="btn rounded-1 btn-primary">Call</div>
+  <% end %>
 </li>
