@@ -23,6 +23,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @users = User.all_except(current_user)
+    @friend_requests = @user.friend_requests
+    @pending_friends = @user.pending_friends
+    @friends = @user.friends
 
     @room = Room.new
     @rooms = Room.public_rooms
@@ -32,6 +35,41 @@ class UsersController < ApplicationController
     @message = Message.new
     @messages = @single_room.messages.order(created_at: :asc)
     render 'rooms/index'
+  end
+
+  def create_friendship
+    @user = User.find(params[:id])
+
+    user_friendid = if current_user.id < @user.id
+                      "%#{current_user.id}" - "%#{@user.id}"
+                    else
+                      "%#{@user.id}" - "%#{current_user.id}"
+                    end
+    friendship = current_user.create_friendship(@user.id, user_friendid)
+
+    if friendship
+      redirect_to root_path, notice: 'You successfully sent friend request!'
+    else
+      redirect_to root_path, notice: 'Invalid Request!'
+    end
+  end
+
+  def delete_friends
+    @user = User.find(params[:id])
+
+    user_friendid = if current_user.id < @user.id
+                      current_user.id.to_s + '-' + @user.id.to_s
+                    else
+                      @user.id.to_s + '-' + current_user.id.to_s
+                    end
+    current_user.delete_friend(user_friendid)
+    redirect_to root_path, notice: 'You successfully deleted friend!'
+  end
+
+  def confirm_friends
+    @user = User.find(params[:id])
+    current_user.confirm_friend(@user)
+    redirect_to root_path, notice: 'You successfully accepts friend!'
   end
 
   def edit
