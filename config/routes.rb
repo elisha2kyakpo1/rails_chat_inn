@@ -10,10 +10,7 @@ Rails.application.routes.draw do
     resources :messages
   end
   devise_for :users
-  resources :users, only: %i[index show] do
-    collection do
-      get :search
-    end
+  resources :users do
     member do
       get 'create_friendship'
       get 'delete_friends'

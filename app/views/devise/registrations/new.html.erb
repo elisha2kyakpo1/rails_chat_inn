@@ -8,13 +8,6 @@
       <%= form_for(resource, as: resource_name, data: {turbo: false}, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
 
-        <div class="field">
-          <% if resource.pic.attached? %>
-            <%= image_tag(resource.pic)%>
-          <% else %>
-            <%= image_tag('/assets/images/default_profile.jpg', style: 'width:50px; height: 50px;') %>
-          <% end %>
-        </div>
         <div class="mt-12 text-[#434b54]">
           <div class="field">
             <%= f.label :name %><br />
