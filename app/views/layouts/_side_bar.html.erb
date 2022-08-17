@@ -7,7 +7,7 @@
             <div class="profile">
               <%= image_tag(current_user.pic) if current_user.pic.attached? %>
             </div>
-            <h5 class="text-dark"><%= link_to current_user.name, user_path(current_user) %></h5>
+            <h5 class="text-dark"><%= link_to current_user.name, user_path(current_user), class: 'text-dark' %></h5>
           </div>
           <div class="">
             <h4 class="home-btn"><span><i class="fa-solid fa-house"></i></span><%= link_to "Home", root_path, turbo:'false', class: "text-dark home" %></h4>

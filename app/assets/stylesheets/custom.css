@@ -57,6 +57,10 @@ small {
   box-shadow: rgb(0 0 0 / 20%) 0px 0px 0.428571rem 0px;
 }
 
+.profile-link {
+  margin: 5px;
+}
+
 .home {
   margin-left: 5px;
 }
@@ -88,7 +92,7 @@ small {
 .rooms-cont,
 .friends {
   border-radius: 0.5rem;
-  padding: 1rem 3rem;
+  padding: 1rem 1.5rem;
 }
 
 

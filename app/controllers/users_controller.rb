@@ -48,9 +48,9 @@ class UsersController < ApplicationController
     friendship = current_user.create_friendship(@user.id, user_friendid)
 
     if friendship
-      redirect_to root_path, notice: 'You successfully sent friend request!'
+      redirect_to rooms_path, notice: 'You successfully sent friend request!'
     else
-      redirect_to root_path, notice: 'Invalid Request!'
+      redirect_to rooms_path, notice: 'Invalid Request!'
     end
   end
 
@@ -63,13 +63,13 @@ class UsersController < ApplicationController
                       @user.id.to_s + '-' + current_user.id.to_s
                     end
     current_user.delete_friend(user_friendid)
-    redirect_to root_path, notice: 'You successfully deleted friend!'
+    redirect_to room_path, notice: 'You successfully deleted friend!'
   end
 
   def confirm_friends
     @user = User.find(params[:id])
     current_user.confirm_friend(@user)
-    redirect_to root_path, notice: 'You successfully accepts friend!'
+    redirect_to room_path, notice: 'You successfully accepts friend!'
   end
 
   def edit
