@@ -1,5 +1,6 @@
-<%= form_with(model: @room, remote: true, class: 'd-flex',
+<%= form_with(model: @room, remote: true, class: 'd-fle',
 data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }) do |f| %>
-    <%= f.text_field :name, class: 'form-control', autocomplete: 'off' %>
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Room name...', autocomplete: 'off' %>
+    <%= f.text_area :description, class: 'form-control', placeholder: 'Short description...', size: "colsxrols" %>
     <%= f.submit data: {disable_with: false}, class: 'btn btn-primary' %>
 <% end %>
