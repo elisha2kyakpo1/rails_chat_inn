@@ -54,7 +54,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def delete_friends
+  def delete_friend
     @user = User.find(params[:id])
 
     user_friendid = if current_user.id < @user.id
@@ -63,13 +63,13 @@ class UsersController < ApplicationController
                       @user.id.to_s + '-' + current_user.id.to_s
                     end
     current_user.delete_friend(user_friendid)
-    redirect_to room_path, notice: 'You successfully deleted friend!'
+    redirect_to root_path, notice: 'You successfully deleted friend!'
   end
 
-  def confirm_friends
+  def confirm_friend
     @user = User.find(params[:id])
     current_user.confirm_friend(@user)
-    redirect_to room_path, notice: 'You successfully accepts friend!'
+    redirect_to root_path, notice: 'You successfully accepts friend!'
   end
 
   def edit
@@ -90,7 +90,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:author_id] = @user.id
-      redirect_to rooms_path,
+      redirect_to root_path,
                   notice: "Hi #{@user.name}, you successfully Signed up!"
     else
       render 'new', notice: 'This name is taken!'

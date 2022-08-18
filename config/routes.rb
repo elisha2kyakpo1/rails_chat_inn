@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get 'create_friendship'
-      get 'delete_friends'
-      get 'confirm_friends'
+      get 'delete_friend'
+      get 'confirm_friend'
     end
   end
   resources :friendships, only: %i[create destroy]

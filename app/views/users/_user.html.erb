@@ -15,16 +15,16 @@
   <%= link_to user.name, user, class:'ms-2 me-auto username text-black' %>
   <span class="profile-link">
     <% if current_user.friend?(user) %>
-      You are friends  <%= link_to 'Delete', delete_friends_user_path(user), class: 'delete btn rounded-1 bg-danger' %>
+      You are friends  <%= link_to 'Delete', delete_friend_user_path(user), class: 'delete btn rounded-1 bg-danger' %>
     <% elsif current_user.friend_requests.include?(user) %>
-      Incoming Request <%= link_to 'Accept', confirm_friends_user_path(user), class: 'request btn rounded-1' %>  <%= link_to 'Ignore', delete_friends_user_path(user), class: 'request'%>
+      Incoming Request <%= link_to 'Accept', confirm_friend_user_path(user), class: 'request btn rounded-1' %>  <%= link_to 'Ignore', delete_friends_user_path(user), class: 'request'%>
     <% elsif current_user.pending_friends.include?(user) %>
       Pending request 
-      <%= link_to 'Cancel', delete_friends_user_path(user), class: 'delete btn rounded-1 bg-danger' %>   
+      <%= link_to 'Cancel', delete_friend_user_path(user), class: 'delete btn rounded-1 bg-danger' %>   
     <% else %>
       <%= link_to 'Add friend', create_friendship_user_path(user), class: 'request btn rounded-1' %>
     <% end %>
   </span>
 
-  <div data-controller="rooms" data-action="click->rooms#call_user" class="btn rounded-1 btn-primary">Call</div>
+  <div data-controller="rooms" data-action="click->rooms#call_user" class="btn rounded-1 btn-primary"><i class="fa-solid fa-video"></i></div>
 </li>
