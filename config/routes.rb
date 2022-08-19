@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
   devise_for :users
   resources :users do
+    get 'search', on: :collection
     member do
       get 'create_friendship'
       get 'delete_friend'

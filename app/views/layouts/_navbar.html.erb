@@ -1,7 +1,8 @@
 <nav class="navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarNav">
-      <nav>
+      <nav class="nav">
+        <%= render 'users/search'%>
         <div class="mt-3">
           <div>
             <% if !current_user %>

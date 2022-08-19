@@ -1,17 +1,9 @@
 <div>
+<div id="users">
   <div>
-    <% if current_user %>
-      <%= form_with(url: search_users_path, method: :get, data: {turbo_frame: "name_search"}) do |form| %>
-        <%= form.text_field :name_search, oninput:"this.form.requestSubmit()", class: "form-control" %>
-      <% end %>
-      <div id="name_search">
-        <%#= render "users/name_search" %>
-      </div> 
-    <% end %>          
-  </div>
-
-  <div>
-    <p class="text-lg leading-loose">
-      <%#= link_to user.name, user, class:'ms-2 me-auto username' %>    </p>
+    <%= form_tag users_path, method: "GET" do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+      <%= submit_tag "Search" %>
+    <% end %>
   </div>
 </div>

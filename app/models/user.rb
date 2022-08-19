@@ -15,6 +15,14 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_one :room
 
+  def self.search_data(data)
+    if data.present?
+      User.where('name LIKE ?', "%#{data}%")
+    else
+      User.all
+    end
+  end
+
   def status_to_css
     case status
     when 'online'

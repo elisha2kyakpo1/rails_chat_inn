@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.includes(:messages)
+    @users = User.includes(:messages).search_data(params[:search])
   end
 
   def new
@@ -112,6 +112,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :pic)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :pic, :search)
   end
 end

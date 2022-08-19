@@ -12,7 +12,7 @@
       <%= render 'users/status', user: user %>
       
     </div>
-  <%= link_to user.name, user, class:'ms-2 me-auto username text-black' %>
+  <%= link_to highlight(user.name, params[:search]), user, class:'ms-2 me-auto username text-black' %>
   <span class="profile-link">
     <% if current_user.friend?(user) %>
       You are friends  <%= link_to 'Delete', delete_friend_user_path(user), class: 'delete btn rounded-1 bg-danger' %>
