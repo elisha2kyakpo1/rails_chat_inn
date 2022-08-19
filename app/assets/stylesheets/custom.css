@@ -89,9 +89,24 @@ small {
   font-size: 1.5rem;
 }
 
+.nav-top {
+  position: relative;
+}
+
 .nav {
   margin-left: auto;
   margin-top: 3%;
+}
+
+.notice,
+.alert {
+  position: absolute;
+  left: 30%;
+}
+
+.notice p,
+.alert p {
+  padding: 3px;
 }
 
 .rooms-cont,
