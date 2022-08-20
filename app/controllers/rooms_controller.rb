@@ -23,6 +23,6 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = Room.create(name: params['room']['name'], description: params['room']['description'], is_private: false)
+    @room = Room.create(name: params['room']['name'], description: params['room']['description'])
   end
 end

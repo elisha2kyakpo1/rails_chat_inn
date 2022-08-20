@@ -93,6 +93,10 @@ small {
   position: relative;
 }
 
+.search {
+  border-radius: 0 5px 5px 0 !important;
+}
+
 .nav {
   margin-left: auto;
   margin-top: 3%;
