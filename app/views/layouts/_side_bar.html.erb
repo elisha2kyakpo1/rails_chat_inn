@@ -13,6 +13,15 @@
           <div class="">
             <h4 class="home-btn"><span><i class="fa-solid fa-house"></i></span><%= link_to "Home", root_path, turbo:'false', class: "text-dark home" %></h4>
           </div>
+          <div class="">
+            <h4 class="home-btn"><span><i class="fa-solid fa-list-check"></i></span><%= link_to "Progress", root_path, turbo:'false', class: "text-dark home" %></h4>
+          </div>
+          <div class="">
+            <h4 class="home-btn"><span><i class="fa-solid fa-clipboard-user"></i></span><%= link_to "Attendance", root_path, turbo:'false', class: "text-dark home" %></h4>
+          </div>
+          <div class="">
+            <h4 class="home-btn"><span><i class="fa-solid fa-chalkboard-user"></i></span><%= link_to "Tutorials", root_path, turbo:'false', class: "text-dark home" %></h4>
+          </div>
           <div>
             <% if current_user %>
               <%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete }, class: "text-dark" %>

@@ -63,10 +63,23 @@ small {
 
 .home {
   margin-left: 5px;
+  font-size: 14px;
 }
 
 .home-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  font-size: 16px;
+}
+
+.home-btn span {
+  margin-right: auto;
+}
+
+.home-btn a {
+  margin-right: auto;
 }
 
 .chat a {
