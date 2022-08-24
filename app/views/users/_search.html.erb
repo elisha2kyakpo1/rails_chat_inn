@@ -1,8 +1,10 @@
-<div id="users">
-  <div>
-    <%= form_tag users_path, class: 'd-flex', method: "GET" do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search", class: 'form-control' %>
-      <%= submit_tag "Search", class: 'btn btn-primary search' %>
-    <% end %>
+<% if current_user %>
+  <div id="users">
+    <div>
+      <%= form_tag users_path, class: 'd-flex', method: "GET" do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search", class: 'form-control' %>
+        <%= submit_tag "Search", class: 'btn btn-primary search' %>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>

@@ -7,11 +7,12 @@
   <div class="profile">
     <%= image_tag(user.pic) if user.pic.attached? %>
   </div>
-    <div class="status">
-      <%= turbo_stream_from "user_status" %>
-      <%= render 'users/status', user: user %>
-      
-    </div>
+  <div class="status">
+    <%= turbo_stream_from "user_status" %>
+    <%= render 'users/status', user: user %>
+    
+  </div>
+  
   <%= link_to highlight(user.name, params[:search]), user, class:'ms-2 me-auto username text-black' %>
   <span class="profile-link">
     <% if current_user.friend?(user) %>

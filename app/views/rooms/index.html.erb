@@ -21,20 +21,20 @@
     </div>
   </div>
   <div id="room_container" class="cont-room text-light" data-controller="toggle" data-toggle-change-class="hidden">
-    <%if @single_room %>
-      <div class="message-body" id="single_room">
-          <h4 class="d-flex sms-chat text-white bg-primary">
-            <strong><%= @user&.name || @single_room.name %></strong>
-             <span class="close">&times;</span>
-          </h4>
-          <%= turbo_stream_from @single_room%>
-          <div class="messages" id="messages">
-            <%= render @messages %>
+      <%if @single_room %>
+        <div class="message-body" id="single_room">
+            <h4 class="d-flex sms-chat text-white bg-primary">
+              <strong><%= @user&.name || @single_room.name %></strong>
+              <span class="close">&times;</span>
+            </h4>
+            <%= turbo_stream_from @single_room%>
+            <div class="messages" id="messages">
+              <%= render @messages %>
+            </div>
+          <div class="send-sms" id="send-message">
+              <%= render 'layouts/new_message' %>
           </div>
-        <div class="send-sms" id="send-message">
-            <%= render 'layouts/new_message' %>
-        </div>
-    <% end %>
+      <% end %>
     </div>
   </div>
 </div>

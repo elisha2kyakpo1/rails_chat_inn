@@ -61,9 +61,18 @@ small {
   margin: 5px;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
 .home {
   margin-left: 5px;
-  font-size: 14px;
 }
 
 .home-btn {
@@ -72,6 +81,19 @@ small {
   justify-content: center;
   cursor: pointer;
   font-size: 16px;
+}
+
+.messages::-webkit-scrollbar {
+  width: 0.7em;
+}
+ 
+.messages::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+.messages::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
 }
 
 .home-btn span {
