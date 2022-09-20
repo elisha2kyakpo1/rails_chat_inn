@@ -18,7 +18,8 @@
     <% if current_user.friend?(user) %>
       You are friends  <%= link_to 'Delete', delete_friend_user_path(user), class: 'delete btn rounded-1 bg-danger' %>
     <% elsif current_user.friend_requests.include?(user) %>
-      Incoming Request <%= link_to 'Accept', confirm_friend_user_path(user), class: 'request btn rounded-1' %>  <%= link_to 'Ignore', delete_friends_user_path(user), class: 'request'%>
+      Incoming Request <%= link_to 'Accept', confirm_friend_user_path(user), class: 'request btn rounded-1' %>
+      <%= link_to 'Ignore', delete_friend_user_path(user), class: 'request'%>
     <% elsif current_user.pending_friends.include?(user) %>
       Pending request 
       <%= link_to 'Cancel', delete_friend_user_path(user), class: 'delete btn rounded-1 bg-danger' %>   

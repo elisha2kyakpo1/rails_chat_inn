@@ -57,8 +57,16 @@ small {
   box-shadow: rgb(0 0 0 / 20%) 0px 0px 0.428571rem 0px;
 }
 
+.fa-circle-plus {
+  font-size: 1.2rem;
+}
+
 .profile-link {
   margin: 5px;
+}
+
+.sign-out {
+  padding-left: 0;
 }
 
 .overlay {
@@ -81,6 +89,10 @@ small {
   justify-content: center;
   cursor: pointer;
   font-size: 16px;
+}
+
+.list li {
+  list-style: none;
 }
 
 .messages::-webkit-scrollbar {
@@ -182,7 +194,7 @@ body {
 }
 
 .section {
-  margin-left: 16%;
+  margin-left: 20.5%;
   margin-top: 10%;
   position: relative;
 }
@@ -190,6 +202,10 @@ body {
 .row {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   width: 100%;
+}
+
+.text-dark {
+  margin-right: 5px;
 }
 
 .panel {
@@ -245,8 +261,7 @@ small a {
 .messages {
   margin-left: 5px;
   overflow-y: scroll;
-  height: 65vh;
-  padding: 0 0.5rem;
+  padding: 0 3.5rem;
 }
 
 .message-box {
@@ -276,7 +291,7 @@ small a {
   position: fixed;
   top: 0;
   bottom: 0;
-  padding: 32px 0 0;
+  padding: 32px 10%;
   background-color: #fff !important;
   box-shadow:
     0 0.46875rem 2.1875rem rgb(4 9 20 / 3%),
@@ -333,6 +348,10 @@ small a {
 .profile-cont {
   justify-content: flex-start;
   align-items: center;
+}
+
+.profile-cont, .poiter, a, .profile {
+  margin: auto 0;
 }
 
 .cont .profile {
