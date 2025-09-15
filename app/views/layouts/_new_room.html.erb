@@ -3,4 +3,7 @@ data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }
     <%= f.text_field :name, class: 'form-control', placeholder: 'Room name...', autocomplete: 'off' %>
     <%= f.text_area :description, class: 'form-control', placeholder: 'Short description...', size: "colsxrols" %>
     <%= f.submit data: {disable_with: false}, class: 'btn btn-primary' %>
+
+    <%#= turbo_stream.append "messages", partial: "messages/message", locals: { message: @message } %>
+    <%#= turbo_stream.action "invoke", selector: "form[data-controller='reset-form']", action: "reset" %>
 <% end %>
