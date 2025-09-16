@@ -100,8 +100,12 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-
     redirect_to users_path
+  end
+
+  def destroy_status
+    current_user.update_column(:status, "offline") if current_user
+    super
   end
 
   private
