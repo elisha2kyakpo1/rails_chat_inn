@@ -103,11 +103,6 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
-  def destroy_status
-    current_user.update_column(:status, "offline") if current_user
-    super
-  end
-
   private
 
   def get_name(user1, user2)
