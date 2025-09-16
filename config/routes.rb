@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :messages
   end
   devise_for :users
+  #devise_for :users, controllers: { sessions: "users/sessions" }
+
   resources :users do
     get 'search', on: :collection
     member do

@@ -27,6 +27,25 @@ small a {
   border-radius: 0.5rem;
 }
 
+.status-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.status-online {
+  background-color: #28a745;
+}
+
+.status-away {
+  background-color: #ffc107;
+}
+
+.status-offline {
+  background-color: #6c757d;
+}
+
 small {
   color: #111827;
 }

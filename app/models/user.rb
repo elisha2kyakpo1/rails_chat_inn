@@ -7,7 +7,7 @@ class User < ApplicationRecord
   scope :all_except, ->(user) { where.not(id: user) }
   scope :filter_by_user_name, ->(name) { where('name ILIKE ?', "%#{name}%") }
 
-  enum status: %i[online away offline]
+  # enum status: %i[online away offline]
 
   after_create_commit { broadcast_append_to 'users' }
   after_update_commit { broadcast_update }
@@ -24,15 +24,10 @@ class User < ApplicationRecord
   end
 
   def status_to_css
-    case status
-    when 'online'
-      'bg-success'
-    when 'away'
-      'bg-warning'
-    when 'offline'
-      'bg-dark'
-    else
-      'bg-dark'
+    case status.to_s.downcase
+      when 'online' then 'status-online'
+    when 'away'   then 'status-away'
+      else 'status-offline'
     end
   end
 
